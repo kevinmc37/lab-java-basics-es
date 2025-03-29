@@ -2,7 +2,7 @@ package classes;
 
 public class Intern extends Employee {
     private int duration; // In days, time the intern will work for the company
-    private final double salaryLimit = 20000; // Interns can't have a higher salary
+    private final double SALARY_LIMIT = 20000; // Interns can't have a higher salary
 
     // Constructor, inherits everything from Employee, except the duration
     public Intern(String name, int age, String position, double salary, int duration) {
@@ -34,8 +34,8 @@ public class Intern extends Employee {
     // We add a salary limit for interns so we override the setSalary method of the parent to check for that
     @Override
     public void setSalary(double newSalary) {
-        if (newSalary < 1000 || newSalary > salaryLimit) { // Range of valid salaries for intern employees
-            super.setSalary(1000); // We call the setSalary method of the parent to add the salary value
+        if (newSalary < 1000 || newSalary > SALARY_LIMIT) { // Range of valid salaries for intern employees
+            super.setSalary(SALARY_LIMIT); // We call the setSalary method of the parent to add the salary value
         }
         else {
             super.setSalary(newSalary); // Same as above, as salary is a private property from the parent
